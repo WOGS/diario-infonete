@@ -1,5 +1,9 @@
 <?php
 session_start();
+if(isset($_SESSION["usuarioOK"])) {
+    $usuario = $_SESSION["usuarioOK"];
+    $pos = explode("-", $usuario);
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -32,15 +36,9 @@ session_start();
             <div class="collapse navbar-collapse align-content-center">
                 <ul class="navbar-nav ml-auto align-content-center">
                     <li class="nav-item active align-content-center">
-                        <?php if(isset($_SESSION["usuarioOK"])) {
-                            $usuarios = $_SESSION["usuarioOK"];
-                            foreach ($usuarios as $usuario){
-                                ?>
-                                <label>Bienvenido <?php echo $usuario['Nombre'];?></label>
-                                <?php
-                            }
-                        }
-                        ?>
+                        <?php if(isset($_SESSION["usuarioOK"])) { ?>
+                            <label>Bienvenido <?php echo $pos[1];?></label>
+                        <?php } ?>
                     </li>
                 </ul>
             </div>
