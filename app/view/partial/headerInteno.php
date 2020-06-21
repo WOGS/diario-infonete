@@ -1,5 +1,9 @@
 <?php
 session_start();
+if(isset($_SESSION["usuarioOK"])) {
+    $usuario = $_SESSION["usuarioOK"];
+    $pos = explode("-", $usuario);
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -10,7 +14,6 @@ session_start();
         <link rel="shortcut icon" type="img/png" href="view/img/favdiario.ico"/>
         <!-- css -->
         <link rel="stylesheet" href="view/css/bootstrap.min.css">
-        <link rel="stylesheet" href="view/css/estilos.css">
         <link rel="stylesheet" href="view/css/style.css">
         <link rel="stylesheet" href="view/css/w3.css">
         <!-- js -->
@@ -18,7 +21,7 @@ session_start();
         <script type="text/javascript" src="view/js/bootstrap.min.js"></script>
     </head>
     <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container">
             <a class="navbar-brand" href="index.php">
                 <span>
@@ -32,27 +35,21 @@ session_start();
             <div class="collapse navbar-collapse align-content-center">
                 <ul class="navbar-nav ml-auto align-content-center">
                     <li class="nav-item active align-content-center">
-                        <?php if(isset($_SESSION["usuarioOK"])) {
-                            $usuarios = $_SESSION["usuarioOK"];
-                            foreach ($usuarios as $usuario){
-                                ?>
-                                <label>Bienvenido <?php echo $usuario['Nombre'];?></label>
-                                <?php
-                            }
-                        }
-                        ?>
+                        <?php if(isset($_SESSION["usuarioOK"])) { ?>
+                            <label>Bienvenido <?php echo $pos[1];?></label>
+                        <?php } ?>
                     </li>
                 </ul>
             </div>
             <div class="container align-content-center"/>
 
-            <div class="collapse navbar-collapse" id="navbarResponsive">
+            <div class="collapse navbar-collapse" >
                 <?php if(isset($_SESSION["usuarioOK"])) {
                 ?>
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
                         <a class="nav-link" href="index.php">Alta-conte
-                            <span class="sr-only">(current)</span>
+
                         </a>
                     </li>
                     <li class="nav-item">
@@ -73,3 +70,4 @@ session_start();
     </nav>
 <!-- Page content -->
 <div class="w3-content" style="max-width:2000px;margin-top:46px">
+</html>

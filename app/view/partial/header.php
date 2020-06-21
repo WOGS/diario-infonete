@@ -14,7 +14,6 @@ if(isset($_SESSION["usuarioOK"])) {
         <link rel="shortcut icon" type="img/png" href="view/img/favdiario.ico"/>
         <!-- css -->
         <link rel="stylesheet" href="view/css/bootstrap.min.css">
-        <link rel="stylesheet" href="view/css/estilos.css">
         <link rel="stylesheet" href="view/css/style.css">
         <link rel="stylesheet" href="view/css/w3.css">
         <!-- js -->
