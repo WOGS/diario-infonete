@@ -37,7 +37,7 @@ if(isset($_SESSION["usuarioOK"])) {
                 <ul class="navbar-nav ml-auto align-content-center">
                     <li class="nav-item active align-content-center">
                         <?php if(isset($_SESSION["usuarioOK"])) { ?>
-                            <label>Bienvenidos <?php echo $pos[1];?></label>
+                            <label>Bienvenidos <?php echo $pos[1] ."-". $pos[2];?></label>
                         <?php } ?>
                     </li>
                 </ul>
@@ -48,7 +48,7 @@ if(isset($_SESSION["usuarioOK"])) {
                 <?php if(isset($_SESSION["usuarioOK"])) {
                 ?>
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
+                    <!--li class="nav-item active">
                         <a class="nav-link" href="index.php">Alta-conte
                             <span class="sr-only">(current)</span>
                         </a>
@@ -58,9 +58,9 @@ if(isset($_SESSION["usuarioOK"])) {
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Autorizar</a>
-                    </li>
+                    </li-->
                     <li class="nav-item">
-                        <a class="nav-link" href="view/logOut.php">Salir</a>
+                        <a class="nav-link" href="view/logOutInterno.php">Salir</a>
                     </li>
                     <?php
                     }

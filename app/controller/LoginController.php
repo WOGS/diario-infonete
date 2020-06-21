@@ -22,7 +22,15 @@ class LoginController{
             if($control==1){
                 header("Location: interno.php");
             }else{
-                header("Location: interno.php?page=panelControl");
+                $usuario = $_SESSION["usuarioOK"];
+                $pos = explode("-", $usuario);
+                if($pos[2]==1){// codigo 1 Administrador
+                    header("Location: interno.php?page=panelControl");
+                }elseif($pos[2]==2){// codigo 2 Contenidista
+                    header("Location: interno.php?page=admRevista");
+                }else{
+                        header("Location: interno.php");
+                    }
             }
         }
     }

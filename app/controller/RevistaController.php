@@ -1,22 +1,24 @@
 <?php
+class RevistaController{
+    private $modelo;
 
-class RevistaController
-{
-    public function __construct(){
-        include_once("model/RevistaModel.php");
-        $this->modelo = new RevistaModel();
-    }
+        public function __construct(){
+            include_once("model/RevistaModel.php");
+            $this->modelo = new RevistaModel();
+        }
 
-    public function execute(){
-        include_once("view/revista/panelControlRevista.php");
-    }
+        public function execute(){
+            $this->modelo->executeBuscarRevista();
+            header("Location: interno.php?page=buscarNoticias");
+        }
 
-    public function executeGuardarRevista($idAdmin,$titulo,$nroRevista,$descripcion){
+        public function executeGuardarRevista($idAdmin,$titulo,$nroRevista,$descripcion){
+            $this->modelo->executeGuardarRevista($idAdmin, $titulo, $nroRevista, $descripcion);
+            header("Location: interno.php?page=admRevista");
+        }
 
-        $this->modelo->executeGuardarRevista($idAdmin,$titulo,$nroRevista,$descripcion);
-            
-        header("Location: view/revista/panelControlRevista.php");
-
-    }
-
+        public function executeBuscarNoticias(){
+            $this->modelo->executeBuscarNoticias();
+            include_once("view/revista/panelControlRevista.php");
+        }
 }

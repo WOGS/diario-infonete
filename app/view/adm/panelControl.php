@@ -23,65 +23,16 @@ if(isset($_SESSION["usuarioOK"])) {
                 <a href="interno.php?page=registrar" class="w3-btn w3-red">Alta Usuario</a>
             </p>
             <p>
-                <a href="interno.php?page=admRevista" class="w3-btn w3-red">Administrar Revista</a>
+                <a href="interno.php?page=admRevista" class="w3-btn w3-red">Administrar Contenido</a>
             </p>
         </div>
         <br>
-        <div class="w3-container">
-            <h2>Lista Autorizar Noticias</h2>
-            <table class="w3-table w3-bordered">
-                <tr>
-                    <th>Nombre</th>
-                    <th>Clave</th>
-                    <th>Borrar</th>
-                    <th>Cambiar Clave</th>
-                </tr>
-                <?php
-                if(isset($_SESSION["usuarios"])) {
-                    $usuarios = $_SESSION["usuarios"];
-                    $tam = sizeof($usuarios);
-                    for ($i = 1; $i <= $tam; $i++) {
-                        $pos = explode("-", $usuarios[$i]);
-                        echo "<tr>";
-                        echo "<td>$pos[1]</td>";
-                        echo "<td>$pos[2]</td>";
-                        echo "<td>";
-                        echo"<a class='w3-padding w3-xlarge w3-text-orange glyphicon glyphicon-trash'href='borrarUsuario.php?idUsuario=$pos[0]'/>";
-                        echo "</td>";
-                        echo "<td>";
-                        echo"<a class='w3-padding w3-xlarge w3-text-orange glyphicon glyphicon-search w3-center' href='cambiarClave.php?idUsuario=$pos[0]'/>";
-                        echo "</td>";
-                        echo"</tr>";
-                    }
-                }
-                if(isset($_SESSION["sinDatos"])) {
-                    echo"<div class='alert warning'>
-                          <span class='closebtn'>&times;</span>  
-                          <strong>Success!</strong> No hay datos para mostrar en la tabla
-                        </div>";
-                    unset($_SESSION["sinDatos"]);
 
-                }
-                if(isset($_SESSION["eliminadoOK"])) {
-                    echo"<div class='alert success'>
-                          <span class='closebtn'>&times;</span>  
-                          <strong>Success!</strong>Usuario eliminado exitosamente</div>";
-                    unset($_SESSION["eliminadoOK"]);
-                }
-                if(isset($_SESSION["userModif"])) {
-                    echo"<div class='alert success'>
-                          <span class='closebtn'>&times;</span>  
-                          <strong>Success!</strong>Clave modificada correctamente</div>";
-                    unset($_SESSION["userModif"]);
-                }
-                ?>
-            </table>
-        </div>
         <br>
         <br>
-        <div class="w3-container w3-display-bottomright">
+        <!--div class="w3-container w3-display-bottomright">
             <a href="index.php" class="w3-btn w3-blue">Salir</a>
-        </div>
+        </div-->
     </div>
     <script>
         var close = document.getElementsByClassName("closebtn");

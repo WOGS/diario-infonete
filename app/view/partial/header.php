@@ -52,7 +52,7 @@ if(isset($_SESSION["usuarioOK"])) {
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="tienda.html">Tienda</a>
+                        <a class="nav-link" href="tiendaView.php">Tienda</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Archivo</a>
