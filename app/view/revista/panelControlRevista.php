@@ -43,7 +43,7 @@ if(isset($_SESSION["usuarioOK"])) {
                     <h2 class="w3-center">Crear Revista</h2>
                 </div>
                 <br>
-                <form class="w3-container" name="registrar" action=".php?page=guardarUsuario" method="post" enctype="application/x-www-form-urlencoded">
+                <form class="w3-container" name="registrar" action="interno.php?page=guardarRevista" method="post" enctype="application/x-www-form-urlencoded">
                     <label>Titulo</label>
                         <input class="w3-input w3-round" type="text" name="titulo"><br/>
                     <label>Nro. Revista</label>

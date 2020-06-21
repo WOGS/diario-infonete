@@ -52,6 +52,24 @@ switch ($page){
         $controller->execute();
         break;
 
+    case "crearRevista":
+        $titulo = $_POST["titulo"];
+        $nroRevista = $_POST["nroRevista"];
+        $descripcion = $_POST["descripcion"];
+        $pos = "";
+        if(isset($_SESSION["usuarioOK"])) {
+            $usuario = $_SESSION["usuarioOK"];
+            $pos = explode("-", $usuario);
+
+        }
+        
+        $idAdmin = $pos[0];
+        //$_SESSION["crearRevista"] = "OK";
+        include_once("controller/RevistaController.php");
+        $controller = new RevistaController();
+        $controller->executeGuardarRevista($idAdmin,$titulo,$nroRevista,$descripcion);
+        break;
+
     case "inicioAdm":
     default:
         include_once("controller/InicioController.php");

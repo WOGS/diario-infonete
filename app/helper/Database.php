@@ -34,13 +34,32 @@ class Database{
         }
 
         while($row = $result->fetch_assoc()) {
-            $resultado = $row['Nro_doc']."-".$row['Nombre'];
+            $resultado = $row['Id_usuario']."-".$row['Nombre'];
         }
         // se guarda el usuario recuperado de la consulta en SESSION
         $_SESSION["usuarioOK"] = $resultado;
         //header("Location: interno.php");
         $stmt->close();
         $this->conexion->close();
+    }
+
+    public function executeGuardarRevista($idAdmin,$titulo,$nroRevista,$descripcion){
+        $_SESSION["revistaOk"] = "si";
+        $_SESSION["idAdminOk"] = "idAdmin";
+        $_SESSION["tituloOk"] = "titulo";
+        $_SESSION["nroRevistaOk"] = "nroRevista";
+        $_SESSION["descrtipcionOk"] = "descripcion";
+        header("location: /prueba.php");
+        
+        //$stmt = $this->conexion->prepare("INSERT INTO Diario_Revista(Id_Admin,Titulo,Numero,Descripcion)  (?,?,?,?)");
+        //$stmt->bind_param('isis', $idAdmin,$titulo,$nroRevista,$descripcion);
+        // set parameters and execute
+        //$stmt->execute();
+
+        // se guarda  en SESSION un ok para mostrarlo en la pantalla de index
+        
+        $stmt->close();
+        $conn->close();
     }
 
     public function queryInsert($sql){
