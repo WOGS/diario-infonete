@@ -45,11 +45,27 @@ switch ($page){
         $controller->execute();
         break;
 
+    case "buscarNoticias":
+        include_once("controller/RevistaController.php");
+        $controller = new RevistaController();
+        $controller->executeBuscarNoticias();
+        break;
+
     case "crearRevista":
         $_SESSION["crearRevista"] = "OK";
         include_once("controller/RevistaController.php");
         $controller = new RevistaController();
         $controller->execute();
+        break;
+
+    case "guardarRevista":
+        $titulo = $_POST["titulo"];
+        $nroRevista = $_POST["nroRevista"];
+        $descripcion = $_POST["descripcion"];
+        $idAdmin = $_POST["idUsuario"];
+        include_once("controller/RevistaController.php");
+        $controller = new RevistaController();
+        $controller->executeGuardarRevista($idAdmin,$titulo,$nroRevista,$descripcion);
         break;
 
     case "inicioAdm":

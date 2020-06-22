@@ -1,21 +1,14 @@
-<footer class="py-4 bg-primary">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <p class="text-right text-white">InfoNete S.A.</p>
-            </div>
-            <div class="col-md-6">
-                <div class="col-md-12">
-                    <ul class="list-unstyled text-left">
-                        <li><a href="tienda.html" class="text-white">Tienda</a></li>
-                        <li><a href="#" class="text-white">Archivo</a></li>
-                        <li><a href="#" class="text-white">Contacto</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>   <!-- row -->
-    </div>   <!-- container -->
-</footer>
+<div class="w3-margin-top">
+    <footer class=" w3-grey w3-center" style="width: 100% ; position:fixed ;bottom:0;">
+        <div class="w3-bar w3-primary">
+            <a href="index.html" class="w3-bar-item w3-button text-white"style="text-decoration: none ;">Inicio</a>
+            <a href="#" class="w3-bar-item w3-button text-white" style="text-decoration: none">Tienda</a>
+            <a href="#" class="w3-bar-item w3-button text-white" style="text-decoration: none">Archivo</a>
+            <a href="#" class="w3-bar-item w3-button text-white"style="text-decoration: none">Contacto</a>
+        </div>
+    </footer>
+</div>
+
 
 <script src="view/js/jquery-3.5.1.min.js"></script>
 <script src="view/js/bootstrap.min.js"></script>
