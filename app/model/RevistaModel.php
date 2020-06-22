@@ -17,6 +17,10 @@ class RevistaModel
         $this->conexion->queryBuscarNoticias();
     }
 
+    public function executeCambiarEstadoNoticia($idNoticia){
+        $this->conexion->queryCambiarEstado($idNoticia);
+    }
+
     public function executeGuardarRevista($idAdmin,$titulo,$nroRevista,$descripcion){
 
         $sql = "INSERT INTO Diario_Revista(Id_Admin,Titulo,Numero,Descripcion)

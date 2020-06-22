@@ -97,13 +97,15 @@ class Database{
 
     public function queryCambiarEstado($idNoticia){
 
-        $estado = "SI";
-        $stmt = $this->conexion->prepare("UPDATE Noticia SET EstadoAutorizado=?  WHERE Cod_noticia = ?");
+        $stmt = $this->conexion->prepare("UPDATE Noticia SET EstadoAutorizado=?  WHERE Cod_noticia=?");
         $stmt->bind_param('si', $estado,$idNoticia);
-
-        $stmt = $this->conexion->prepare("SELECT * FROM Noticia");
+        $estado = "SI";
         $stmt->execute();
-        $result = $stmt->get_result();
+        $stmt->close();
+
+        $stmt2 = $this->conexion->prepare("SELECT * FROM Noticia");
+        $stmt2->execute();
+        $result = $stmt2->get_result();
 
         if($result->num_rows === 0) {
             $_SESSION["sinDatos"] = "0";
@@ -123,7 +125,7 @@ class Database{
             $_SESSION["noticias"] = $resultados;
         }
 
-        $stmt->close();
+        $stmt2->close();
         $this->conexion->close();
     }
 
