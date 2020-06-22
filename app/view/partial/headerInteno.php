@@ -47,19 +47,8 @@ if(isset($_SESSION["usuarioOK"])) {
             <?php if(isset($_SESSION["usuarioOK"])) {
             ?>
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="index.php">Alta-conte
 
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="tienda.html">Alta-noticia</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Autorizar</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="view/logOut.php">Salir</a>
+                    <a class="nav-link w3-display-right w3-margin-right" href="view/logOut.php">Salir</a>
                 </li>
                 <?php
                 }
