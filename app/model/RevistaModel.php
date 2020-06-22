@@ -24,4 +24,12 @@ class RevistaModel
         $this->conexion->queryInsert($sql);
         $this->conexion->close();
     }
+    public function executeGuardarNoticia($tituloNoticia,$subtitulo,$informe,$cod_contenidista){
+
+        $sql = "insert into Noticia (Titulo,Subtitulo,informe_noticia,Cod_georef
+                 ,Cod_seccion,Cod_Contenidista,EstadoAutorizado,Origen)
+      value ('$tituloNoticia','$subtitulo','$informe',1,1,$cod_contenidista,'no','diario');";
+        $this->conexion->queryInsert($sql);
+        $this->conexion->close();
+    }
 }
