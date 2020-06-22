@@ -85,10 +85,18 @@ switch ($page){
         $controller->executeGuardarNoticia($tituloNoticia,$subtitulo,$informe,$cod_contenidista);
         break;
 
+        case "cambiarEstado":
+        $id_noticia = $_GET["Cod_Noticia"];
+        include_once("controller/RevistaController.php");
+        $controller = new RevistaController();
+        $controller->queryCambiarEstado($id_noticia);
+        break;
+
     case "inicioAdm":
     default:
         include_once("controller/InicioController.php");
         $controller = new InicioController();
         $controller->executeAdm();
         break;
+
 }

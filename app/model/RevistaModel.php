@@ -32,4 +32,10 @@ class RevistaModel
         $this->conexion->queryInsert($sql);
         $this->conexion->close();
     }
+    public function queryCambiarEstado($id_Noticia){
+        //$sql="UPDATE Noticia SET EstadoAutorizado='SI'where Cod_Noticia= '$id_Noticia'";
+        //$this->conexion->update($sql);
+        $this->conexion->queryCambiarEstado($id_Noticia);
+        $this->conexion->close();
+    }
 }
