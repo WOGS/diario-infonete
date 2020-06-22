@@ -25,8 +25,8 @@ class RevistaController{
         $this->modelo->executeGuardarNoticia($tituloNoticia,$subtitulo,$informe,$cod_contenidista);
         header("Location: interno.php?page=admRevista");
     }
-    public function queryCambiarEstado($id_Noticia){
-            $this->modelo->queryCambiarEstado($id_Noticia);
+    public function queryCambiarEstado($idNoticia){
+            $this->modelo->queryCambiarEstado($idNoticia);
             header("Location: interno.php?page=admRevista");
     }
 }

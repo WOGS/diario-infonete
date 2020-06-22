@@ -86,10 +86,10 @@ switch ($page){
         break;
 
         case "cambiarEstado":
-        $id_noticia = $_GET["Cod_Noticia"];
+        $idNoticia = $_GET["idNoticia"];
         include_once("controller/RevistaController.php");
         $controller = new RevistaController();
-        $controller->queryCambiarEstado($id_noticia);
+        $controller->queryCambiarEstado($idNoticia);
         break;
 
     case "inicioAdm":

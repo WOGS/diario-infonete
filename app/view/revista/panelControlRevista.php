@@ -1,7 +1,6 @@
 <?php
 if(isset($_SESSION["usuarioOK"])) {
     $usuario = $_SESSION["usuarioOK"];
-    $pos = explode("-", $usuario);
     ?>
     <html>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,35 +16,7 @@ if(isset($_SESSION["usuarioOK"])) {
             <a href="interno.php?page=crearRevista" class="w3-button bg-primary w3-hover-black w3-margin-right"style="text-decoration: none">Crear Noticia</a>
 
         </div>
-<<<<<<< HEAD
     </div>
-    <?php
-        if(isset($_SESSION["crearRevista"])){
-                ?>
-            <div class="w3-display-middle w3-margin-top w3-card-4" id="ocultar" style="margin-top: 10%">
-
-                <div class="w3-container bg-primary ">
-=======
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <h1>Panel de control Revista</h1>
-        <br>
-        <h2>Acciones posibles</h2>
-        <div class="w3-container">
-            <p>
-                <a href="interno.php?page=crearRevista" class="w3-btn w3-red">Crear nueva Revista</a>
-            </p>
-            <p>
-                <a href="interno.php?page=crearNoticia" class="w3-btn w3-red">Crear Noticia</a>
-            </p>
-        </div>
-        <br>
-        <br>
-        <br>
         <div class="w3-container">
             <h2>Lista de Revistas</h2>
             <table class="w3-table w3-bordered">
@@ -132,7 +103,7 @@ if(isset($_SESSION["usuarioOK"])) {
                         echo "</td>";
                         echo "<td>";
                         echo"<a class='w3-padding w3-xlarge w3-text-orange glyphicon glyphicon-search w3-center' 
-                        href='interno.php?page=cambiarEstado&Cod_Noticia=1'/>";
+                        href='interno.php?page=cambiarEstado&idNoticia=$pos[0]'/>";
                         echo "</td>";
                         echo"</tr>";
                     }
@@ -162,43 +133,31 @@ if(isset($_SESSION["usuarioOK"])) {
         </div>
     </div>
     <?php
-        if(isset($_SESSION["crearRevista"])){
-            ?>
-            <br>
-            <br>
-            <div class="w3-card-4 w3-display-middle " style="width:25%;">
-                <span class='closebtn'>&times;</span>
-                <div class="w3-container w3-teal w3-round">
->>>>>>> develop
-                    <h2 class="w3-center">Crear Revista</h2>
-                </div>
-                <br>
-                <form class="w3-container" name="registrar" action="interno.php?page=guardarRevista" method="post" enctype="application/x-www-form-urlencoded">
-                    <label>Titulo</label>
-                        <input class="w3-input" type="text" name="titulo"><br/>
-                    <label>Nro. Revista</label>
-                        <input class="w3-input " type="text" name="nroRevista"><br/>
-                    <label>Descripcion</label>
-                        <textarea class="w3-input " type="text" name="descripcion" rows="4" cols="50">
-                        </textarea>
-                    <br/>
-<<<<<<< HEAD
-                    <div class="w3-center w3-margin-bottom">
-                        <input class="w3-button w3-blue-grey w3-round w3-center" type="submit" name="boton" value="CREAR" >
+    if(isset($_SESSION["crearRevista"])){
+        ?>
+        <div class="w3-display-middle w3-margin-top w3-card-4" id="ocultar" style="margin-top: 10%">
 
-                        <a class="w3-button w3-blue-grey w3-round w3-center" onclick="cerrarForm()">SALIR</a>
-=======
-                    <input type="hidden" name="idUsuario" value="<?php echo $pos[0]?>">
-                    <div class="container">
-                        <input class="w3-button w3-blue-grey w3-round w3-center" type="submit" name="boton" value="GRABAR">
->>>>>>> develop
-                    </div>
-                </form>
-
+            <div class="w3-container bg-primary ">
+                <h2 class="w3-center">Crear Revista</h2>
             </div>
-    <?php
-            unset($_SESSION["crearRevista"]);
-        }
+            <br>
+            <form class="w3-container" name="registrar" action=".php?page=guardarUsuario" method="post" enctype="application/x-www-form-urlencoded">
+                <label>Titulo</label>
+                <input class="w3-input" type="text" name="titulo"><br/>
+                <label>Nro. Revista</label>
+                <input class="w3-input " type="text" name="nroRevista"><br/>
+                <label>Descripcion</label>
+                <textarea class="w3-input " type="text" name="descripcion" rows="4" cols="50">
+                        </textarea>
+                <br/>
+                <div class="w3-center w3-margin-bottom">
+                    <input class="w3-button w3-blue-grey w3-round w3-center" type="submit" name="boton" value="CREAR" >
+                    <a class="w3-button w3-blue-grey w3-round w3-center" onclick="cerrarForm()">SALIR</a>
+            </form>
+        </div>
+        <?php
+        unset($_SESSION["crearRevista"]);
+    }
     ?>
     <?php
     if(isset($_SESSION["crearNoticia"])){
@@ -240,12 +199,11 @@ if(isset($_SESSION["usuarioOK"])) {
                 setTimeout(function(){ div.style.display = "none"; }, 600);
             }
         }
+
         function cerrarForm() {
-         document.getElementById("ocultar").style.display = 'none';
+            document.getElementById("ocultar").style.display = 'none';
 
         }
-
-
     </script>
     </body>
     </html>
