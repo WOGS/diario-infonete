@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3c01dc56-23bd-4c2d-bb5b-0769a50e56da" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/config/config.ini" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/RevistaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/RevistaController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helper/Database.php" beforeDir="false" afterPath="$PROJECT_DIR$/helper/Database.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interno.php" beforeDir="false" afterPath="$PROJECT_DIR$/interno.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/RevistaModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/RevistaModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/revista/panelControlRevista.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/revista/panelControlRevista.php" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1dbXTtTJqErVZSKc04wiKOja5dl" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/view" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/view" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3c01dc56-23bd-4c2d-bb5b-0769a50e56da" name="Default Changelist" comment="" />
+      <created>1592694777133</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1592694777133</updated>
+      <workItem from="1592694778729" duration="23880000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="-1451" y="101" key="SettingsEditor" timestamp="1592864478432">
+      <screen x="-1920" y="-78" width="1920" height="1080" />
+    </state>
+    <state x="-1451" y="101" key="SettingsEditor/0.0.1280.800/-1920.-78.1920.1080@-1920.-78.1920.1080" timestamp="1592864478432" />
+    <state x="-1253" y="217" width="586" height="490" key="find.popup" timestamp="1592865492795">
+      <screen x="-1920" y="-78" width="1920" height="1080" />
+    </state>
+    <state x="-1253" y="217" width="586" height="490" key="find.popup/0.0.1280.800/-1920.-78.1920.1080@-1920.-78.1920.1080" timestamp="1592865492795" />
+    <state x="-1295" y="163" key="search.everywhere.popup" timestamp="1592764029763">
+      <screen x="-1920" y="-78" width="1920" height="1080" />
+    </state>
+    <state x="-1295" y="163" key="search.everywhere.popup/0.0.1280.800/-1920.-78.1920.1080@-1920.-78.1920.1080" timestamp="1592764029763" />
+  </component>
+</project>

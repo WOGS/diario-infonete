@@ -139,4 +139,7 @@ class Database{
     public function close(){
         mysqli_close($this->conexion);
     }
+    public function update($sql){
+        mysqli_close($this->conexion,$sql);
+    }
 }

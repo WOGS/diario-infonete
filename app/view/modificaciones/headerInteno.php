@@ -3,7 +3,7 @@ session_start();
 if(isset($_SESSION["usuarioOK"])) {
     $usuario = $_SESSION["usuarioOK"];
     $pos = explode("-", $usuario);
-    }
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -21,7 +21,7 @@ if(isset($_SESSION["usuarioOK"])) {
         <script type="text/javascript" src="view/js/bootstrap.min.js"></script>
     </head>
     <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top ">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container">
             <a class="navbar-brand" href="index.php">
                 <span>
@@ -43,24 +43,21 @@ if(isset($_SESSION["usuarioOK"])) {
             </div>
             <div class="container align-content-center"/>
 
-            <div class="collapse navbar-collapse " id="navbarResponsive">
+            <div class="collapse navbar-collapse" >
+                <?php if(isset($_SESSION["usuarioOK"])) {
+                ?>
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="index.php">Inicio
-                            <span class="sr-only">(current)</span>
+                        <a class="nav-link" href="index.php">Alta-conte
+
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="tiendaView.php">Tienda</a>
+                        <a class="nav-link" href="tienda.html">Alta-noticia</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Archivo</a>
+                        <a class="nav-link" href="#">Autorizar</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contacto</a>
-                    </li>
-                    <?php if(isset($_SESSION["usuarioOK"])) {
-                     ?>
                     <li class="nav-item">
                         <a class="nav-link" href="view/logOut.php">Salir</a>
                     </li>
@@ -73,3 +70,4 @@ if(isset($_SESSION["usuarioOK"])) {
     </nav>
 <!-- Page content -->
 <div class="w3-content" style="max-width:2000px;margin-top:46px">
+</html>

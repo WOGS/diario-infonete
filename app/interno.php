@@ -90,7 +90,6 @@ switch ($page){
         include_once("controller/RevistaController.php");
         $controller = new RevistaController();
         $controller->executeCambiarEstadoNoticia($idNoticia);
-        break;
 
     case "inicioAdm":
     default:
@@ -98,4 +97,5 @@ switch ($page){
         $controller = new InicioController();
         $controller->executeAdm();
         break;
+
 }
