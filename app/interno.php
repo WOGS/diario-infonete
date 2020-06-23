@@ -97,5 +97,4 @@ switch ($page){
         $controller = new InicioController();
         $controller->executeAdm();
         break;
-
 }

@@ -17,10 +17,6 @@ class RevistaModel
         $this->conexion->queryBuscarNoticias();
     }
 
-    public function executeCambiarEstadoNoticia($idNoticia){
-        $this->conexion->queryCambiarEstado($idNoticia);
-    }
-
     public function executeGuardarRevista($idAdmin,$titulo,$nroRevista,$descripcion){
 
         $sql = "INSERT INTO Diario_Revista(Id_Admin,Titulo,Numero,Descripcion)
@@ -36,10 +32,7 @@ class RevistaModel
         $this->conexion->queryInsert($sql);
         $this->conexion->close();
     }
-    public function queryCambiarEstado($idNoticia){
-        //$sql="UPDATE Noticia SET EstadoAutorizado='SI'where Cod_Noticia= '$id_Noticia'";
-        //$this->conexion->update($sql);
+    public function executeCambiarEstadoNoticia($idNoticia){
         $this->conexion->queryCambiarEstado($idNoticia);
-        $this->conexion->close();
     }
 }

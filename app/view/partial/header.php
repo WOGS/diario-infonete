@@ -14,6 +14,7 @@ if(isset($_SESSION["usuarioOK"])) {
         <link rel="shortcut icon" type="img/png" href="view/img/favdiario.ico"/>
         <!-- css -->
         <link rel="stylesheet" href="view/css/bootstrap.min.css">
+        <link rel="stylesheet" href="view/css/estilos.css">
         <link rel="stylesheet" href="view/css/style.css">
         <link rel="stylesheet" href="view/css/w3.css">
         <!-- js -->
@@ -21,7 +22,7 @@ if(isset($_SESSION["usuarioOK"])) {
         <script type="text/javascript" src="view/js/bootstrap.min.js"></script>
     </head>
     <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top ">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.php">
                 <span>
@@ -43,7 +44,7 @@ if(isset($_SESSION["usuarioOK"])) {
             </div>
             <div class="container align-content-center"/>
 
-            <div class="collapse navbar-collapse " id="navbarResponsive">
+            <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
                         <a class="nav-link" href="index.php">Inicio

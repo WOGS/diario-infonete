@@ -6,47 +6,83 @@ if(isset($_SESSION["usuarioOK"])) {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <body>
+    <div class="w3-display-topmiddle">
+        <div class="w3-container w3-blue-grey w3-round">
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <h1>Panel de control Administrador</h1>
+        <br>
+        <h2>Acciones posibles</h2>
+        <div class="w3-container">
+            <p>
+                <a href="interno.php?page=registrar" class="w3-btn w3-red">Alta Usuario</a>
+            </p>
+            <p>
+                <a href="interno.php?page=admRevista" class="w3-btn w3-red">Administrar Revista</a>
+            </p>
+        </div>
+        <br>
+        <div class="w3-container">
+            <h2>Lista Autorizar Noticias</h2>
+            <table class="w3-table w3-bordered">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Clave</th>
+                    <th>Borrar</th>
+                    <th>Cambiar Clave</th>
+                </tr>
+                <?php
+                if(isset($_SESSION["usuarios"])) {
+                    $usuarios = $_SESSION["usuarios"];
+                    $tam = sizeof($usuarios);
+                    for ($i = 1; $i <= $tam; $i++) {
+                        $pos = explode("-", $usuarios[$i]);
+                        echo "<tr>";
+                        echo "<td>$pos[1]</td>";
+                        echo "<td>$pos[2]</td>";
+                        echo "<td>";
+                        echo"<a class='w3-padding w3-xlarge w3-text-orange glyphicon glyphicon-trash'href='borrarUsuario.php?idUsuario=$pos[0]'/>";
+                        echo "</td>";
+                        echo "<td>";
+                        echo"<a class='w3-padding w3-xlarge w3-text-orange glyphicon glyphicon-search w3-center' href='cambiarClave.php?idUsuario=$pos[0]'/>";
+                        echo "</td>";
+                        echo"</tr>";
+                    }
+                }
+                if(isset($_SESSION["sinDatos"])) {
+                    echo"<div class='alert warning'>
+                          <span class='closebtn'>&times;</span>  
+                          <strong>Success!</strong> No hay datos para mostrar en la tabla
+                        </div>";
+                    unset($_SESSION["sinDatos"]);
 
-    <div class="w3-container w3-center">
-        <h1 class="">Panel de control Administrador</h1>
-        <h2 class="w3-margin-left w3-margin-bottom" style="margin-top: 2%">Acciones posibles</h2>
-
-        <div class="w3-container w3-margin-top w3-margin-bottom">
-            <a href="interno.php?page=crearRevista" class="w3-button bg-primary w3-hover-black w3-margin-right" style="text-decoration: none">Alta noticia</a>
-            <a href="interno.php?page=crearRevista" class="w3-button bg-primary w3-hover-black w3-margin-right"style="text-decoration: none">Administrar Noticias</a>
-            <a href="interno.php?page=crearRevista" class="w3-button bg-primary w3-hover-black w3-margin-right"style="text-decoration: none">Crear Noticia</a>
-
+                }
+                if(isset($_SESSION["eliminadoOK"])) {
+                    echo"<div class='alert success'>
+                          <span class='closebtn'>&times;</span>  
+                          <strong>Success!</strong>Usuario eliminado exitosamente</div>";
+                    unset($_SESSION["eliminadoOK"]);
+                }
+                if(isset($_SESSION["userModif"])) {
+                    echo"<div class='alert success'>
+                          <span class='closebtn'>&times;</span>  
+                          <strong>Success!</strong>Clave modificada correctamente</div>";
+                    unset($_SESSION["userModif"]);
+                }
+                ?>
+            </table>
+        </div>
+        <br>
+        <br>
+        <div class="w3-container w3-display-bottomright">
+            <a href="index.php" class="w3-btn w3-blue">Salir</a>
         </div>
     </div>
-    <?php
-    if(isset($_SESSION["crearRevista"])){
-        ?>
-        <div class="w3-display-middle w3-margin-top w3-card-4" id="ocultar" style="margin-top: 10%">
-
-            <div class="w3-container bg-primary ">
-                <h2 class="w3-center">Crear Revista</h2>
-            </div>
-            <br>
-            <form class="w3-container" name="registrar" action=".php?page=guardarUsuario" method="post" enctype="application/x-www-form-urlencoded">
-                <label>Titulo</label>
-                <input class="w3-input" type="text" name="titulo"><br/>
-                <label>Nro. Revista</label>
-                <input class="w3-input " type="text" name="nroRevista"><br/>
-                <label>Descripcion</label>
-                <textarea class="w3-input " type="text" name="descripcion" rows="4" cols="50">
-                        </textarea>
-                <br/>
-                <div class="w3-center w3-margin-bottom">
-                    <input class="w3-button w3-blue-grey w3-round w3-center" type="submit" name="boton" value="CREAR" >
-
-                    <a class="w3-button w3-blue-grey w3-round w3-center" onclick="cerrarForm()">SALIR</a>
-                </div>
-            </form>
-
-        </div>
-        <?php
-    }
-    ?>
     <script>
         var close = document.getElementsByClassName("closebtn");
         var i;
@@ -57,12 +93,6 @@ if(isset($_SESSION["usuarioOK"])) {
                 setTimeout(function(){ div.style.display = "none"; }, 600);
             }
         }
-        function cerrarForm() {
-            document.getElementById("ocultar").style.display = 'none';
-
-        }
-
-
     </script>
     </body>
     </html>

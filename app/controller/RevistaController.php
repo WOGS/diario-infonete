@@ -21,14 +21,12 @@ class RevistaController{
             $this->modelo->executeBuscarNoticias();
             include_once("view/revista/panelControlRevista.php");
         }
-
-    public function executeCambiarEstadoNoticia($idNoticia){
-        $this->modelo->executeCambiarEstadoNoticia($idNoticia);
-        include_once("view/revista/panelControlRevista.php");
-    }
-
     public function executeGuardarNoticia($tituloNoticia,$subtitulo,$informe,$cod_contenidista){
         $this->modelo->executeGuardarNoticia($tituloNoticia,$subtitulo,$informe,$cod_contenidista);
         header("Location: interno.php?page=admRevista");
+    }
+    public function executeCambiarEstadoNoticia($idNoticia){
+        $this->modelo->executeCambiarEstadoNoticia($idNoticia);
+        include_once("view/revista/panelControlRevista.php");
     }
 }

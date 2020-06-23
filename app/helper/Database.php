@@ -95,10 +95,11 @@ class Database{
         $this->conexion->close();
     }
 
-    public function queryCambiarEstado($idNoticia){
+    public function queryCambiarEstado($idNoticia)
+    {
 
         $stmt = $this->conexion->prepare("UPDATE Noticia SET EstadoAutorizado=?  WHERE Cod_noticia=?");
-        $stmt->bind_param('si', $estado,$idNoticia);
+        $stmt->bind_param('si', $estado, $idNoticia);
         $estado = "SI";
         $stmt->execute();
         $stmt->close();
@@ -107,29 +108,13 @@ class Database{
         $stmt2->execute();
         $result = $stmt2->get_result();
 
-        if($result->num_rows === 0) {
+        if ($result->num_rows === 0) {
             $_SESSION["sinDatos"] = "0";
-        }else{
-            $i=1;
-            while($row = $result->fetch_assoc()) {
-                $codNoticia= $row['Cod_noticia'];
-                $titulo=$row['Titulo'];
-                $subTitulo = $row['Subtitulo'];
-                $estadoAutorizado = $row['EstadoAutorizado'];
-                $origen = $row['Origen'];
-
-                $resultados[$i]= $codNoticia."-".$titulo."-".$subTitulo."-".$estadoAutorizado."-".$origen;
-                $i++;
-            }
-            // se guarda las revistas recuperados de la consulta en SESSION
-            $_SESSION["noticias"] = $resultados;
         }
-
-        $stmt2->close();
-        $this->conexion->close();
     }
 
-    public function queryInsert($sql){
+
+            public function queryInsert($sql){
         mysqli_query($this->conexion, $sql);
     }
 
@@ -138,8 +123,5 @@ class Database{
     }
     public function close(){
         mysqli_close($this->conexion);
-    }
-    public function update($sql){
-        mysqli_close($this->conexion,$sql);
     }
 }
