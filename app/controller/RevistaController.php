@@ -12,6 +12,14 @@ class RevistaController{
             header("Location: interno.php?page=buscarNoticias");
         }
 
+        public function executeCrearNoticia(){
+            include_once("view/revista/crearNoticiaView.php");
+        }
+
+        public function executeCrearRevista(){
+            include_once("view/revista/registrarRevistaView.php");
+        }
+
         public function executeGuardarRevista($idAdmin,$titulo,$nroRevista,$descripcion){
             $this->modelo->executeGuardarRevista($idAdmin, $titulo, $nroRevista, $descripcion);
             header("Location: interno.php?page=admRevista");
@@ -21,12 +29,13 @@ class RevistaController{
             $this->modelo->executeBuscarNoticias();
             include_once("view/revista/panelControlRevista.php");
         }
-    public function executeGuardarNoticia($tituloNoticia,$subtitulo,$informe,$cod_contenidista){
-        $this->modelo->executeGuardarNoticia($tituloNoticia,$subtitulo,$informe,$cod_contenidista);
-        header("Location: interno.php?page=admRevista");
+
+        public function executeGuardarNoticia($tituloNoticia,$subtitulo,$informe,$cod_contenidista){
+            $this->modelo->executeGuardarNoticia($tituloNoticia,$subtitulo,$informe,$cod_contenidista);
+            header("Location: interno.php?page=admRevista");
     }
-    public function executeCambiarEstadoNoticia($idNoticia){
-        $this->modelo->executeCambiarEstadoNoticia($idNoticia);
-        include_once("view/revista/panelControlRevista.php");
+        public function executeCambiarEstadoNoticia($idNoticia){
+            $this->modelo->executeCambiarEstadoNoticia($idNoticia);
+            include_once("view/revista/panelControlRevista.php");
     }
 }

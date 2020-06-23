@@ -46,7 +46,7 @@ class Database{
         $result = $stmt->get_result();
 
         if($result->num_rows === 0) {
-            $_SESSION["sinDatos"] = "0";
+            $_SESSION["sinDatosRevistas"] = "0";
         }else{
             $i=1;
             while($row = $result->fetch_assoc()) {
@@ -74,7 +74,7 @@ class Database{
         $result = $stmt->get_result();
 
         if($result->num_rows === 0) {
-            $_SESSION["sinDatos"] = "0";
+            $_SESSION["sinDatosNoticias"] = "0";
         }else{
             $i=1;
             while($row = $result->fetch_assoc()) {
@@ -113,14 +113,10 @@ class Database{
         }
     }
 
-
-            public function queryInsert($sql){
+    public function queryInsert($sql){
         mysqli_query($this->conexion, $sql);
     }
 
-    public function querySearch($sql){
-        mysqli_query($this->conexion, $sql);
-    }
     public function close(){
         mysqli_close($this->conexion);
     }

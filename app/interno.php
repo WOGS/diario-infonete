@@ -52,17 +52,15 @@ switch ($page){
         break;
 
     case "crearRevista":
-        $_SESSION["crearRevista"] = "OK";
         include_once("controller/RevistaController.php");
         $controller = new RevistaController();
-        $controller->execute();
+        $controller->executeCrearRevista();
         break;
 
         case "crearNoticia":
-        $_SESSION["crearNoticia"] = "OK";
         include_once("controller/RevistaController.php");
         $controller = new RevistaController();
-        $controller->execute();
+        $controller->executeCrearNoticia();
         break;
 
     case "guardarRevista":

@@ -28,7 +28,7 @@ class RevistaModel
 
         $sql = "insert into Noticia (Titulo,Subtitulo,informe_noticia,Cod_georef
                  ,Cod_seccion,Cod_Contenidista,EstadoAutorizado,Origen)
-      value ('$tituloNoticia','$subtitulo','$informe',1,1,$cod_contenidista,'no','diario');";
+      value ('$tituloNoticia','$subtitulo','$informe',1,1,$cod_contenidista,'NO','DIARIO')";
         $this->conexion->queryInsert($sql);
         $this->conexion->close();
     }

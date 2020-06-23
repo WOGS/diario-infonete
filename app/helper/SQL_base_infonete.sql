@@ -218,9 +218,5 @@ CONSTRAINT FK_Noticia_Georeferencia FOREIGN KEY (Cod_georef) REFERENCES Georefer
 
      insert into Noticia (Cod_noticia,Titulo,Subtitulo,informe_noticia,link_noticia,Cod_georef,imagen_noticia
      ,Cod_seccion,Cod_Contenidista,EstadoAutorizado,Origen)
- value (1,"titulo","subtitulo","informe","link",1,"imagen",1,1,"no","diario");
+ value (1,"titulo","subtitulo","informe","link",1,"imagen",1,1,"NO","DIARIO");
 insert into Diario_Revista(Id_Admin,Titulo,Numero,Descripcion) value (1,"aaa",1,"bb");
-
-select * from Noticia
-
-
